@@ -1,41 +1,16 @@
 {
-  "name": "WebArchive → Drive",
-  "short_name": "Archiver",
-  "description": "Capture any webpage as screenshot + HTML and save to Google Drive & Notion",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#6c63ff",
-  "orientation": "portrait",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
+  "name": "webarchive-backend",
+  "version": "2.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
   },
-  "shortcuts": [
-    {
-      "name": "Archive Current Page",
-      "short_name": "Archive",
-      "url": "/?action=archive",
-      "description": "Quickly archive a URL"
-    }
-  ]
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "playwright": "^1.40.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
