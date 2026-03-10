@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: webarchive-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npx playwright install chromium --with-deps
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
+    healthCheckPath: /ping
